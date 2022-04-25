@@ -1,14 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import TabItem from "./TabItem";
 
 function Tab({ tabTitles }) {
-  console.log(tabTitles);
+  const [clickedTab, setClickedTab] = useState(0);
 
   return (
     <TabContainer>
       {tabTitles.map((title) => (
-        <TabItem key={tabTitles.indexOf(title)} tabTitle={title} />
+        <TabItem
+          key={tabTitles.indexOf(title)}
+          tabTitle={title}
+          index={tabTitles.indexOf(title)}
+          clickedTab={clickedTab}
+          setClickedTab={setClickedTab}
+        />
       ))}
       <HightlightUnderbar />
     </TabContainer>
