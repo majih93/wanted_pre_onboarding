@@ -16,7 +16,7 @@ function Tab({ tabTitles }) {
           setClickedTab={setClickedTab}
         />
       ))}
-      <HightlightUnderbar />
+      <HightlightUnderbar clickedTab={clickedTab} />
     </TabContainer>
   );
 }
@@ -40,4 +40,6 @@ const HightlightUnderbar = styled.div`
   height: 100%;
   border-bottom: 2px solid #39aea9;
   z-index: 1;
+  transition: 0.2s;
+  transform: translateX(${(props) => `${Number(props.clickedTab) * 100}%`});
 `;

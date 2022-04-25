@@ -7,7 +7,11 @@ function TabItem({ tabTitle, index, clickedTab, setClickedTab }) {
   };
 
   return (
-    <TabItemConatainer clickedTab={clickedTab} onClick={tabClickHandler}>
+    <TabItemConatainer
+      clickedTab={clickedTab}
+      index={index}
+      onClick={tabClickHandler}
+    >
       {tabTitle}
     </TabItemConatainer>
   );
@@ -23,7 +27,8 @@ const TabItemConatainer = styled.button`
   background: transparent;
   font-size: 0.8rem;
   font-weight: 700;
-  color: gray;
+  color: ${(props) =>
+    props.clickedTab === props.index ? "black" : "darkgray"};
   z-index: 2;
   &:hover {
     cursor: pointer;
