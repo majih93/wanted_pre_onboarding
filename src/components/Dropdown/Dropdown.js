@@ -5,7 +5,7 @@ import DropdownInput from "./DropdownInput";
 import DropdownItem from "./DropdownItem";
 
 function Dropdown({ titles }) {
-  const [pickedItem, setPickedItem] = useState(titles[0]);
+  const [pickedItem, setPickedItem] = useState(titles[0].title);
   const [isDropped, setIsDropped] = useState(false);
   const [searchedItem, setSearchedItem] = useState("");
 
@@ -14,9 +14,9 @@ function Dropdown({ titles }) {
   };
 
   const filteredTitles = titles.filter(
-    (title) =>
-      title === titles[0] ||
-      title.toLowerCase().includes(searchedItem.toLowerCase())
+    (item) =>
+      item.id === 1 ||
+      item.title.toLowerCase().includes(searchedItem.toLowerCase())
   );
 
   return (
@@ -32,10 +32,10 @@ function Dropdown({ titles }) {
             setSearchedItem={setSearchedItem}
           />
           <ItemContainer>
-            {filteredTitles.map((title) => (
+            {filteredTitles.map((item) => (
               <DropdownItem
-                key={titles.indexOf(title)}
-                title={title}
+                key={item.id}
+                title={item.title}
                 setIsDropped={setIsDropped}
                 setPickedItem={setPickedItem}
                 searchedItem={searchedItem}
