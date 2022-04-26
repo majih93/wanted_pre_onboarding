@@ -7,7 +7,8 @@ function DropdownItem({ title }) {
 
 export default DropdownItem;
 
-const TitleContainer = styled.div`
+const TitleContainer = styled.li`
+  display: block;
   font-size: 1rem;
   width: 100%;
   padding: 10px 30px;

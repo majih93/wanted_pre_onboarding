@@ -60,12 +60,10 @@ const InputContainer = styled.div`
   flex-direction: column;
 `;
 
-const ItemContainer = styled.div`
+const ItemContainer = styled.ul`
   width: 100%;
-  /* height: 200px; */
   display: flex;
   flex-direction: column;
-  /* background-color: slateblue; */
   border: 1.5px solid #d1d1d1;
   border-top: none;
   border-radius: 0 0 3px 3px;
