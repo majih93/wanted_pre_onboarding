@@ -32,6 +32,7 @@ export default Slider;
 const SliderContainer = styled.div`
   display: flex;
   flex-direction: column;
+  width: 370px;
 `;
 
 const ValueContainer = styled.div`
@@ -39,7 +40,7 @@ const ValueContainer = styled.div`
   align-items: center;
   justify-content: flex-end;
   background-color: #f8f8f8;
-  width: 370px;
+  width: 100%;
   height: 60px;
   border: 1.5px solid #e1e1e1;
   border-radius: 5px;
@@ -58,6 +59,7 @@ const Percentage = styled.span`
 `;
 
 const BarContainer = styled.div`
+  width: 100%;
   margin-top: 20px;
   position: relative;
   height: 70px;
