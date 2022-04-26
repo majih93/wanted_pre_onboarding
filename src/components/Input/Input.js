@@ -1,16 +1,35 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { BsFillCheckCircleFill as Checked } from "react-icons/bs";
 import { ImEyeBlocked as NotShowing } from "react-icons/im";
 
 function Input() {
+  const [isValidated, setIsValiated] = useState("");
+
+  const validateEmail = (e) => {
+    let email = e.target.value;
+
+    let validationRegex = /^([a-z\d.-]+)@([a-z\d-]+)\.([a-z]{2,10})$/;
+    if (validationRegex.test(email) === true) {
+      setIsValiated(true);
+    } else {
+      setIsValiated(false);
+    }
+  };
+
   return (
     <Inputs>
       <InputContainer>
         <InputLabel>E-mail</InputLabel>
-        <StyledInput type="email" placeholder="E-mail" />
-        <CheckIcon />
-        <ErrorMessage>Invalid e-mail address.</ErrorMessage>
+        <StyledInput
+          type="email"
+          placeholder="E-mail"
+          onChange={validateEmail}
+        />
+        <CheckIcon isvalidated={isValidated.toString()} />
+        <ErrorMessage isValidated={isValidated}>
+          Invalid e-mail address.
+        </ErrorMessage>
       </InputContainer>
       <InputContainer>
         <InputLabel>Password</InputLabel>
@@ -68,19 +87,20 @@ const ErrorMessage = styled.span`
   font-size: 0.7rem;
   padding-left: 4px;
   color: red;
-  /* display: none; */
+  display: ${(props) => (!props.isValidated ? "" : "none")};
 `;
 
 const CheckIcon = styled(Checked)`
   position: absolute;
-  fill: #39aea9;
-  right: 10px;
+  fill: ${(props) => (props.isvalidated === "true" ? "#39aea9" : "#DDDDDD")};
+  right: 13px;
   top: 37px;
+  width: 15px;
 `;
 
 const NotShowIcon = styled(NotShowing)`
   position: absolute;
   fill: #444444;
-  right: 10px;
+  right: 13px;
   top: 37px;
 `;
