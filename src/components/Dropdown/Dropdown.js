@@ -6,21 +6,33 @@ import DropdownItem from "./DropdownItem";
 
 function Dropdown({ titles }) {
   const [pickedItem, setPickedItem] = useState(titles[0]);
+  const [isDropped, setIsDropped] = useState(false);
+
+  const dropHandler = () => {
+    setIsDropped(!isDropped);
+  };
 
   return (
     <DropdownContainer>
-      <PickedItemContainer>
+      <PickedItemContainer onClick={dropHandler}>
         <PickedItemTitle>{pickedItem}</PickedItemTitle>
-        <DownArrowIcon />
+        <DownArrowIcon isdropped={isDropped.toString()} />
       </PickedItemContainer>
-      <InputContainer>
-        <DropdownInput placeholder="Search Symbol" />
-        <ItemContainer>
-          {titles.map((title) => (
-            <DropdownItem title={title} key={titles.indexOf(title)} />
-          ))}
-        </ItemContainer>
-      </InputContainer>
+      {isDropped ? (
+        <InputContainer>
+          <DropdownInput placeholder="Search Symbol" />
+          <ItemContainer>
+            {titles.map((title) => (
+              <DropdownItem
+                key={titles.indexOf(title)}
+                title={title}
+                setIsDropped={setIsDropped}
+                setPickedItem={setPickedItem}
+              />
+            ))}
+          </ItemContainer>
+        </InputContainer>
+      ) : null}
     </DropdownContainer>
   );
 }
@@ -52,7 +64,12 @@ const PickedItemTitle = styled.span`
   font-size: 1rem;
 `;
 
-const DownArrowIcon = styled(DownArrow)``;
+const DownArrowIcon = styled(DownArrow)`
+  transform: rotate(
+    ${(props) => (props.isdropped === "true" ? "180deg" : "0deg")}
+  );
+  transition: all ease 0.5s;
+`;
 
 const InputContainer = styled.div`
   width: 100%;
