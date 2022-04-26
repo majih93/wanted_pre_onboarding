@@ -16,7 +16,6 @@ function DropdownItem({
     }
   };
 
-  // console.log(title);
   return <TitleContainer onClick={changePickedItem}>{title}</TitleContainer>;
 }
 

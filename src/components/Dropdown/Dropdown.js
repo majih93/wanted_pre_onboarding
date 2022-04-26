@@ -32,7 +32,6 @@ function Dropdown({ titles }) {
             setSearchedItem={setSearchedItem}
           />
           <ItemContainer>
-            {/* <DropdownItem title={titles[0]} /> */}
             {filteredTitles.map((title) => (
               <DropdownItem
                 key={titles.indexOf(title)}

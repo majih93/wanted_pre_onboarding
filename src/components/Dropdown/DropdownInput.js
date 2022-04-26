@@ -12,8 +12,8 @@ function DropdownInput({ placeholder, setSearchedItem }) {
       <Input
         type="text"
         placeholder={placeholder}
-        autoFocus={true}
         onChange={searchItem}
+        autoFocus
       />
     </InputContainer>
   );
