@@ -26,7 +26,11 @@ function Slider() {
         />
         <CirclesContainer>
           {percentages.map((percentage) => (
-            <Circle key={percentages.indexOf(percentage)} />
+            <Circle
+              key={percentages.indexOf(percentage)}
+              percentage={percentage}
+              curVal={curVal}
+            />
           ))}
         </CirclesContainer>
         <NumberButtonsContainer>
@@ -101,7 +105,11 @@ const BottomBar = styled.input`
   }
 
   ::-webkit-slider-runnable-track {
-    background-color: #eeeeee;
+    background: linear-gradient(
+      to right,
+      #39aea9 ${(props) => props.value}%,
+      #eeeeee ${(props) => props.value}%
+    );
     width: 100%;
     height: 5px;
     cursor: pointer;
@@ -124,7 +132,8 @@ const CirclesContainer = styled.div`
 const Circle = styled.div`
   width: 15px;
   height: 15px;
-  background-color: #eeeeee;
+  background-color: ${(props) =>
+    props.curVal >= props.percentage ? "#39aea9" : "#eeeeee"};
   border-radius: 50%;
 `;
 
