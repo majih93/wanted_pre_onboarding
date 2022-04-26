@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { BsFillCheckCircleFill as Checked } from "react-icons/bs";
-import { ImEyeBlocked as NotShowing } from "react-icons/im";
+import { ImEyeBlocked as NotShowing, ImEye as Showing } from "react-icons/im";
 import debounce from "./debounce";
 
 function Input() {
   const [isValidated, setIsValiated] = useState("");
+  const [pwType, setPwType] = useState("password");
 
   const validateEmail = (e) => {
     let email = e.target.value;
@@ -24,6 +25,14 @@ function Input() {
 
   const debounceValidation = debounce(validateEmail, 500);
 
+  const changePwType = () => {
+    if (pwType === "password") {
+      setPwType("text");
+    } else {
+      setPwType("password");
+    }
+  };
+
   return (
     <Inputs>
       <InputContainer>
@@ -40,8 +49,12 @@ function Input() {
       </InputContainer>
       <InputContainer>
         <InputLabel>Password</InputLabel>
-        <StyledInput type="password" placeholder="Password" />
-        <NotShowIcon />
+        <StyledInput type={pwType} placeholder="Password" />
+        {pwType === "password" ? (
+          <NotShowIcon onClick={changePwType} />
+        ) : (
+          <ShowIcon onClick={changePwType} />
+        )}
       </InputContainer>
     </Inputs>
   );
@@ -110,4 +123,17 @@ const NotShowIcon = styled(NotShowing)`
   fill: #444444;
   right: 13px;
   top: 37px;
+  &:hover {
+    cursor: pointer;
+  }
+`;
+
+const ShowIcon = styled(Showing)`
+  position: absolute;
+  fill: #39aea9;
+  right: 13px;
+  top: 37px;
+  &:hover {
+    cursor: pointer;
+  }
 `;
