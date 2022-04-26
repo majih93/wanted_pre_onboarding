@@ -2,11 +2,19 @@ import React from "react";
 import styled from "styled-components";
 import { BiSearch as Search } from "react-icons/bi";
 
-function DropdownInput({ placeholder }) {
+function DropdownInput({ placeholder, setSearchedItem }) {
+  const searchItem = (e) => {
+    setSearchedItem(e.target.value);
+  };
   return (
     <InputContainer>
       <SearchIcon />
-      <Input type="text" placeholder={placeholder} autoFocus={true} />
+      <Input
+        type="text"
+        placeholder={placeholder}
+        autoFocus={true}
+        onChange={searchItem}
+      />
     </InputContainer>
   );
 }

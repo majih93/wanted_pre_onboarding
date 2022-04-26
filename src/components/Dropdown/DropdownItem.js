@@ -1,10 +1,19 @@
 import React from "react";
 import styled from "styled-components";
 
-function DropdownItem({ title, setIsDropped, setPickedItem }) {
+function DropdownItem({
+  title,
+  setIsDropped,
+  setPickedItem,
+  searchedItem,
+  setSearchedItem,
+}) {
   const changePickedItem = () => {
     setPickedItem(title);
     setIsDropped(false);
+    if (searchedItem !== "") {
+      setSearchedItem("");
+    }
   };
 
   // console.log(title);
