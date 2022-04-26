@@ -2,24 +2,41 @@ import React, { useState } from "react";
 import styled from "styled-components";
 
 function Slider() {
-  const percentages = ["1%", "25%", "50%", "75%", "100%"];
+  const percentages = [1, 25, 50, 75, 100];
+
+  const [curVal, setCurVal] = useState(50);
+
+  const SlideValue = (e) => {
+    setCurVal(e.target.value);
+  };
 
   return (
     <SliderContainer>
       <ValueContainer>
-        <Value>100</Value>
+        <Value>{curVal}</Value>
         <Percentage>%</Percentage>
       </ValueContainer>
       <BarContainer>
-        <BottomBar type="range" />
+        <BottomBar
+          type="range"
+          min={1}
+          max={100}
+          value={curVal}
+          onChange={SlideValue}
+        />
         <CirclesContainer>
           {percentages.map((percentage) => (
-            <Circle />
+            <Circle key={percentages.indexOf(percentage)} />
           ))}
         </CirclesContainer>
         <NumberButtonsContainer>
           {percentages.map((percentage) => (
-            <NumberButton>{percentage}</NumberButton>
+            <NumberButton
+              key={percentages.indexOf(percentage)}
+              onClick={() => setCurVal(percentage)}
+            >
+              {percentage}%
+            </NumberButton>
           ))}
         </NumberButtonsContainer>
       </BarContainer>
