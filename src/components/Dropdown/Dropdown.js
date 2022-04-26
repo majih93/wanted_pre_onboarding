@@ -1,18 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { TiArrowSortedDown as DownArrow } from "react-icons/ti";
 import DropdownInput from "./DropdownInput";
 import DropdownItem from "./DropdownItem";
 
 function Dropdown({ titles }) {
+  const [pickedItem, setPickedItem] = useState(titles[0]);
+
   return (
     <DropdownContainer>
       <PickedItemContainer>
-        <PickedItemTitle>All Symbols</PickedItemTitle>
+        <PickedItemTitle>{pickedItem}</PickedItemTitle>
         <DownArrowIcon />
       </PickedItemContainer>
       <InputContainer>
-        <DropdownInput />
+        <DropdownInput placeholder="Search Symbol" />
         <ItemContainer>
           {titles.map((title) => (
             <DropdownItem title={title} key={titles.indexOf(title)} />
