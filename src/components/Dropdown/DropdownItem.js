@@ -1,8 +1,14 @@
 import React from "react";
 import styled from "styled-components";
 
-function DropdownItem({ title }) {
-  return <TitleContainer>{title}</TitleContainer>;
+function DropdownItem({ title, setIsDropped, setPickedItem }) {
+  const changePickedItem = () => {
+    setPickedItem(title);
+    setIsDropped(false);
+  };
+
+  // console.log(title);
+  return <TitleContainer onClick={changePickedItem}>{title}</TitleContainer>;
 }
 
 export default DropdownItem;
@@ -14,6 +20,6 @@ const TitleContainer = styled.li`
   padding: 10px 30px;
   &:hover {
     cursor: pointer;
-    background-color: #e1e1e1;
+    background-color: #f5f4f4;
   }
 `;
