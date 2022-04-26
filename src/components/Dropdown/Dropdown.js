@@ -91,6 +91,8 @@ const InputContainer = styled.div`
 
 const ItemContainer = styled.ul`
   width: 100%;
+  max-height: 300px;
+  overflow-y: auto;
   display: flex;
   flex-direction: column;
   border: 1.5px solid #d1d1d1;
