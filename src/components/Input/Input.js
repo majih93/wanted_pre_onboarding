@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { BsFillCheckCircleFill as Checked } from "react-icons/bs";
 import { ImEyeBlocked as NotShowing } from "react-icons/im";
+import debounce from "./debounce";
 
 function Input() {
   const [isValidated, setIsValiated] = useState("");
@@ -21,6 +22,8 @@ function Input() {
     }
   };
 
+  const debounceValidation = debounce(validateEmail, 500);
+
   return (
     <Inputs>
       <InputContainer>
@@ -28,7 +31,7 @@ function Input() {
         <StyledInput
           type="email"
           placeholder="E-mail"
-          onChange={validateEmail}
+          onChange={debounceValidation}
         />
         <CheckIcon isvalidated={isValidated.toString()} />
         <ErrorMessage isValidated={isValidated}>
