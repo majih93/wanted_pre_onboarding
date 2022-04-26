@@ -9,11 +9,15 @@ function Input() {
   const validateEmail = (e) => {
     let email = e.target.value;
 
-    let validationRegex = /^([a-z\d.-]+)@([a-z\d-]+)\.([a-z]{2,10})$/;
-    if (validationRegex.test(email) === true) {
-      setIsValiated(true);
+    if (email === "") {
+      setIsValiated("");
     } else {
-      setIsValiated(false);
+      let validationRegex = /^([a-z\d.-]+)@([a-z\d-]+)\.([a-z]{2,10})$/;
+      if (validationRegex.test(email) === true) {
+        setIsValiated(true);
+      } else {
+        setIsValiated(false);
+      }
     }
   };
 
@@ -87,7 +91,7 @@ const ErrorMessage = styled.span`
   font-size: 0.7rem;
   padding-left: 4px;
   color: red;
-  display: ${(props) => (!props.isValidated ? "" : "none")};
+  display: ${(props) => (props.isValidated === false ? "" : "none")};
 `;
 
 const CheckIcon = styled(Checked)`
