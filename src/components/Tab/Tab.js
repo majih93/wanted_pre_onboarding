@@ -5,8 +5,10 @@ import TabItem from "./TabItem";
 function Tab({ tabTitles }) {
   const [clickedTab, setClickedTab] = useState(0);
 
+  console.log(tabTitles.length);
+
   return (
-    <TabContainer>
+    <TabContainer tabLength={tabTitles.length}>
       {tabTitles.map((title) => (
         <TabItem
           key={tabTitles.indexOf(title)}
@@ -26,7 +28,8 @@ export default Tab;
 const TabContainer = styled.div`
   display: flex;
   position: relative;
-  width: 500px;
+  /* width: 500px; */
+  width: ${(props) => props.tabLength * 160 + 20}px;
   height: 50px;
   padding: 0 10px;
   border-bottom: 2px solid #edeef7;
