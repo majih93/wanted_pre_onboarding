@@ -36,6 +36,8 @@
 
 처음에는 ToggleBar에 `width: 50%` 로 넓이값을 정했습니다. 이 경우, 아래 사진처럼 ToggleBar가 우측으로 삐져나오는 현상이 있었습니다.
 
+[문제](https://user-images.githubusercontent.com/87853486/165452856-bc30248f-4b96-47c4-8161-0c1c4ea4a0fb.PNG)
+
 부모 요소에 `padding: 2.5px`가 주어져 있어 부모요소의 전체 넓이의 50%에 해당되는 넓이를 가지는 ToggleBar가 제가 원했던 padding 을 제외한 넓이의 50%보다 큰 넓이를 가지고 있는게 문제라는 것을 파악하였습니다.
 
 이를 해결하기 위해 div를 하나 추가해 감싸보기도 하고, ToggleBar 자체의 넓이를 고정값으로 주기도 해보았습니다.

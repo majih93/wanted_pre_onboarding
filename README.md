@@ -2,7 +2,7 @@
 
 ## 배포된 사이트
 
-마지혁 온보딩 선발과제
+[배포사이트](https://rococo-choux-31af06.netlify.app/)
 
 ## 실행 방법
 
