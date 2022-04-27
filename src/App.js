@@ -1,4 +1,3 @@
-import "./App.css";
 import styled from "styled-components";
 import Dropdown from "./components/Dropdown/Dropdown";
 import Slider from "./components/Slider/Slider";
