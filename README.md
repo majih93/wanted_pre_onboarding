@@ -70,12 +70,12 @@ src
 
 # 과제별 코드 및 README
 
-### [Toggle](https://github.com/majih93/wanted_pre_onboarding/blob/main/src/components/Toggle/README.md)
+### [Toggle](https://github.com/majih93/wanted_pre_onboarding/blob/main/src/components/Toggle)
 
-### [Tab](https://github.com/majih93/wanted_pre_onboarding/blob/main/src/components/Tab/README.md)
+### [Tab](https://github.com/majih93/wanted_pre_onboarding/blob/main/src/components/Tab)
 
-### [Slider](https://github.com/majih93/wanted_pre_onboarding/blob/main/src/components/Slider/README.md)
+### [Slider](https://github.com/majih93/wanted_pre_onboarding/blob/main/src/components/Slider)
 
-### [Input](https://github.com/majih93/wanted_pre_onboarding/blob/main/src/components/Input/README.md)
+### [Input](https://github.com/majih93/wanted_pre_onboarding/blob/main/src/components/Input)
 
-### [Dropdown](https://github.com/majih93/wanted_pre_onboarding/blob/main/src/components/Dropdown/README.md)
+### [Dropdown](https://github.com/majih93/wanted_pre_onboarding/blob/main/src/components/Dropdown)
