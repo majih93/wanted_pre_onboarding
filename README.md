@@ -79,3 +79,22 @@ src
 ### [Input](https://github.com/majih93/wanted_pre_onboarding/blob/main/src/components/Input)
 
 ### [Dropdown](https://github.com/majih93/wanted_pre_onboarding/blob/main/src/components/Dropdown)
+
+---
+
+## 리팩토링
+
+과제를 구현하면서 시간/능력이 부족해서 구현하지 못했던 내용들
+
+### 전체
+
+- 브라우저 호환성 문제 해결
+- 코드 분리에 대한 고민
+
+### Input
+
+- 이메일 오류검증은 해당 인풋에서 focus 벗어낫을 때 실행되도록 구현(이렇게 구현하면 굳이 debouncing 이 필요없을 듯함)
+
+### Dropdown
+
+- 해당영역 바깥을 클릭했을 때, dropdown이 닫히도록 구현
