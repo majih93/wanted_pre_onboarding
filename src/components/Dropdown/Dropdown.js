@@ -9,8 +9,9 @@ function Dropdown({ titles }) {
   const [isDropped, setIsDropped] = useState(false);
   const [searchedItem, setSearchedItem] = useState("");
 
+  // !state => prevState => !prevState로 변경
   const dropHandler = () => {
-    setIsDropped(!isDropped);
+    setIsDropped((prevState) => !prevState);
   };
 
   const filteredTitles = titles.filter(
