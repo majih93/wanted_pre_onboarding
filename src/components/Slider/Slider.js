@@ -95,8 +95,8 @@ const BottomBar = styled.input`
   ::-webkit-slider-thumb {
     background-color: #39aea9;
     cursor: pointer;
-    height: 20px;
-    width: 20px;
+    height: 22px;
+    width: 22px;
     border: 3px solid white;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     border-radius: 50%;
@@ -125,7 +125,7 @@ const CirclesContainer = styled.div`
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  bottom: 40px;
+  bottom: 41px;
   height: 30px;
 `;
 
