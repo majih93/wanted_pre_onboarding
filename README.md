@@ -2,7 +2,7 @@
 
 ## 리팩토링 리포지토리
 
-[리팩토링 리포지토리] https://github.com/majih93/wanted_refactor
+[리팩토링 리포지토리](https://github.com/majih93/wanted_refactor)
 
 ## 배포된 사이트
 
