@@ -1,5 +1,9 @@
 # 원티드 프리온보딩 선발과제
 
+## 리팩토링 리포지토리
+
+[리팩토링 리포지토리] https://github.com/majih93/wanted_refactor
+
 ## 배포된 사이트
 
 [배포사이트](https://rococo-choux-31af06.netlify.app/)
